@@ -31,16 +31,17 @@ public class UserController {
     	return userService.save(user);
     }
     
-    @PostMapping("/login")
-    public User loginUser(@Valid @RequestBody User user) throws Exception{
-    	User userExists = userService.findByEmail(user.getEmail());
-    	System.out.println(userExists);
+   // @PostMapping("/login")
+    //public User loginUser(@Valid @RequestBody User user) throws Exception{
+    	//User userExists = userService.findByEmail(user.getEmail());
+    	//System.out.println(userExists);
     	
-    	if(userExists == null ||!userExists.getPassword().contentEquals(user.getPassword())) {
-    		   throw new Exception("403 error");
-       }
-    	return userExists;
-    }
+    	//if(userExists == null ||!userExists.getPassword().contentEquals(user.getPassword())) {
+    		//   throw new Exception("403 error");
+       //}
+    	//return userExists;
+    //}
+    
     @RequestMapping(value="/user", method = RequestMethod.GET)
     public List listUser(){
         return userService.findAll();
